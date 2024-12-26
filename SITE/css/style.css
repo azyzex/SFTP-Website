@@ -1,0 +1,420 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf0f1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #2c3e50 50%, #2980b9 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+/* Card Styles */
+/* Card Styles */
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Increased gap */
+  margin-bottom: 30px;
+}
+
+.upload-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px; /* Increased width */
+  height: 300px; /* Increased height */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Center content */
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-card img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 10px; /* Optional: rounded corners for the image */
+}
+
+.upload-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+.upload-card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+.upload-title {
+  transition: opacity 0.5s;
+}
+.upload-card p {
+  font-size: 14px;
+  color: #7f8c8d;
+}
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  transform: scale(0.95);
+}
+
+/* Fade-in transition for upload section */
+.fade-in {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: scale(1);
+}
+/* Card fade-out effect */
+.upload-card.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Upload section fade-in effect */
+.uploadzone {
+  display: none; /* Initially hidden */
+  opacity: 0;
+  visibility: hidden;
+  animation: fadeIn 0.5s forwards;
+}
+
+.uploadzone.show {
+  display: flex; /* Show the upload section */
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.wrapper {
+  width: 498px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.wrapper form {
+  height: 210px;
+  display: flex;
+  cursor: pointer;
+  margin: 30px 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 15px;
+  border: 4px dashed #2980b9;
+  background-color: #f4f7f9;
+  transition: all 0.3s ease;
+}
+
+.wrapper form:hover {
+  border-color: #a366ff;
+}
+
+form :where(i, p) {
+  color: #2980b9;
+}
+
+form i {
+  font-size: 50px;
+}
+
+form p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+section .row {
+  margin-bottom: 10px;
+  background: #dfe6e9;
+  list-style: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+section .row:hover {
+  background: #dcdde1;
+}
+
+section .row i {
+  color: #2980b9;
+  font-size: 30px;
+}
+
+section .details span {
+  font-size: 14px;
+}
+
+.progress-area .row .content {
+  width: 100%;
+  margin-left: 15px;
+}
+
+.progress-area .details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  justify-content: space-between;
+}
+
+.progress-area .content .progress-bar {
+  height: 6px;
+  width: 100%;
+  margin-bottom: 4px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.content .progress-bar .progress {
+  height: 100%;
+  width: 0%;
+  background: #2980b9;
+  border-radius: inherit;
+}
+
+.uploaded-area {
+  max-height: 232px;
+  overflow-y: scroll;
+}
+
+.uploaded-area.onprogress {
+  max-height: 150px;
+}
+
+.uploaded-area::-webkit-scrollbar {
+  width: 0px;
+}
+
+.uploaded-area .row .content {
+  display: flex;
+  align-items: center;
+}
+
+.uploaded-area .row .details {
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
+}
+
+.uploaded-area .row .details .size {
+  color: #636e72;
+  font-size: 11px;
+}
+
+.uploaded-area i.fa-check {
+  font-size: 16px;
+  color: #27ae60;
+}
+
+.button-35 {
+  width: 120px;
+  padding: 10px 20px; /* Increase padding for a more substantial button */
+  font-size: 16px; /* Slightly smaller font size for a balanced look */
+  font-weight: 500;
+  border-radius: 8px; /* Slightly less rounded corners for a modern look */
+  color: #fff;
+  background: linear-gradient(45deg, #2980b9, #8e44ad); /* Subtle gradient */
+  border: none; /* No border */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.button-35:hover {
+  background: linear-gradient(45deg, #1c4f8c, #6c2f78); /* Darker gradient on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.button-35:active {
+  background: linear-gradient(45deg, #1c4f8c, #6c2f78); /* Maintain gradient on active */
+  transform: translateY(0); /* Reset lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reset shadow */
+}
+
+/* Popup Styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 100;
+}
+
+.popup-info {
+  background-color: #f1c40f;
+}
+
+.popup-error {
+  background-color: #e74c3c; /* New style for error popups */
+}
+.popup-success {
+  background-color: #27ae60;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Snackbar container */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on show */
+  min-width: 250px; /* Set the width of the snackbar */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Center-align text */
+  border-radius: 8px; /* Slightly circular borders */
+  position: fixed; /* Stay in place */
+  z-index: 9999; /* Make sure it sits on top of other elements */
+  left: 50%; /* Center horizontally */
+  bottom: 30px; /* 30px from the bottom */
+  transform: translateX(-50%); /* Offset for exact centering */
+  font-size: 17px; /* Font size */
+  padding: 16px; /* Padding inside the snackbar */
+  opacity: 0; /* Initial opacity */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth fade in/out and slide up/down */
+}
+
+/* Show the snackbar */
+#snackbar.show {
+  visibility: visible; /* Show snackbar */
+  opacity: 1; /* Full opacity */
+  animation: fadeIn 0.5s ease; /* Smooth fade-in */
+}
+
+/* Hide the snackbar */
+#snackbar.hide {
+  opacity: 0; /* Invisible */
+  animation: fadeOut 0.5s ease; /* Smooth fade-out */
+}
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} /* Start from bottom 0 and opacity 0 */
+  to {bottom: 30px; opacity: 1;} /* End at bottom 30px and opacity 1 */
+}
+@-webkit-keyframes fadeout {
+  from {opacity: 1;} /* Start from opacity 1 */
+  to {opacity: 0;} /* End at opacity 0 */
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;} /* Start from bottom 0 and opacity 0 */
+  to {bottom: 30px; opacity: 1;} /* End at bottom 30px and opacity 1 */
+}
+
+@keyframes fadeout {
+  from {opacity: 1;} /* Start from opacity 1 */
+  to {opacity: 0;} /* End at opacity 0 */
+}
+
+@keyframes slide {
+  0% { transform: translateX(-25%); }
+  100% { transform: translateX(25%); }
+}
+
+@media only screen and (max-width: 700px) {
+  .card-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+.upload-title {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}

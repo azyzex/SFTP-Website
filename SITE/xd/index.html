@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drag & Drop File Upload</title>
+  <link rel="icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+  <div class="container">
+    <!-- Title -->
+    <h1 class="upload-title">Select Your Software to Upload Files</h1>
+    
+    <!-- File Upload Cards -->
+    <div class="card-container">
+      <div class="upload-card" id="upload-card-1">
+        <img src="matlab-image.png" alt="Matlab" class="card-image">
+      </div>
+      <div class="upload-card" id="upload-card-2">
+        <img src="klippel-image.png" alt="Klippel" class="card-image">
+      </div>
+    </div>
+    
+    <!-- File Upload Section -->
+    <div class="uploadzone" id="upload-section" style="display: none;">
+      <div class="wrapper" id="drag-wrapper">
+        <div class="drag-area" id="drag-area">
+          <form action="#" id="drag-form">
+            <input class="file-input" type="file" id="file-input" name="file" hidden multiple accept=".kdbx,.pdf,.log">
+            <i class="fas fa-cloud-upload-alt" id="drag-cloud"></i>
+            <p id="drag_text">Click Or Drag and Drop File to Upload</p>
+          </form>
+        </div>
+        <section class="progress-area" id="progress-area"></section>
+        <section class="uploaded-area" id="uploaded-area"></section>
+        <button class="button-35" id="reset-btn">Reset</button>
+        <button class="button-35" id="send-btn">Send</button>
+      </div>
+    </div>
+
+    <!-- Popups -->
+    <div id="snackbar"></div>
+    <div id="popup" class="popup popup-info">
+      <div class="popup-content">
+        <p id="popup-message">Must be exactly 2 KDBX files, 1 PDF file, and 1 LOG file.</p>
+        <button class="button-35" id="popup-ok-btn">OK</button>
+      </div>
+    </div>
+    <div id="success-popup" class="popup popup-success">
+      <div class="popup-content">
+        <p>Files successfully uploaded!</p>
+        <button class="button-35" id="success-ok-btn">OK</button>
+      </div>
+    </div>
+    <div id="removed-popup" class="popup popup-info">
+      <div class="popup-content">
+        <p>All files removed.</p>
+        <button class="button-35" id="removed-ok-btn">OK</button>
+      </div>
+    </div>
+  </div>
+  <script src="upload.js"></script>
+</body>
+</html>
